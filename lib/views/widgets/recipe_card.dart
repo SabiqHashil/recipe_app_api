@@ -5,6 +5,7 @@ class RecipeCard extends StatelessWidget {
   final String rating;
   final String cookTime;
   final String thumbnailUrl;
+
   const RecipeCard({
     super.key,
     required this.title,
@@ -12,6 +13,7 @@ class RecipeCard extends StatelessWidget {
     required this.rating,
     required this.thumbnailUrl,
   });
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,10 +26,7 @@ class RecipeCard extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.6),
-            offset: const Offset(
-              0.0,
-              10.0,
-            ),
+            offset: const Offset(0.0, 10.0),
             blurRadius: 10.0,
             spreadRadius: -6.0,
           ),
@@ -51,6 +50,8 @@ class RecipeCard extends StatelessWidget {
                 title,
                 style: const TextStyle(
                   fontSize: 19,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
@@ -78,7 +79,12 @@ class RecipeCard extends StatelessWidget {
                         size: 18,
                       ),
                       const SizedBox(width: 7),
-                      Text(rating),
+                      Text(
+                        rating,
+                        style: const TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -97,10 +103,15 @@ class RecipeCard extends StatelessWidget {
                         size: 18,
                       ),
                       const SizedBox(width: 7),
-                      Text(cookTime),
+                      Text(
+                        cookTime,
+                        style: const TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
